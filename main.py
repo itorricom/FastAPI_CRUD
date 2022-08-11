@@ -25,7 +25,10 @@ def shutdown():
 
 @app.get('/')
 async def index():
-    return 'CRUD FastAPI - Grupo 2'
+    #return 'CRUD FastAPI - Grupo 2'
+    #async def get_user():
+    user = User.select().all()
+    return user
 
 @app.post('/users')
 async def create_user(user_request: UserRequestModel):
